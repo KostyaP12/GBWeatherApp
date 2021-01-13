@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="selectCitySize">5sp</dimen>
+    <dimen name="marginTopEditSelectCitySpinnerSelectCity">5dp</dimen>
+    <dimen name="temperatureTextSize">5sp</dimen>
+    <dimen name="tempInfoSize">5sp</dimen>
+</resources>
