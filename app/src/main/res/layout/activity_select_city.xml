@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/editTextSelectCity"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sendBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
-        android:buttonTint="@color/white"
+        android:buttonTint="@color/black"
         android:onClick="onCheckboxClicked"
         android:text="@string/windSpeed"
         app:layout_constraintLeft_toLeftOf="@id/editSelectCity"
@@ -41,7 +41,7 @@
         android:id="@+id/cbPressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:buttonTint="@color/white"
+        android:buttonTint="@color/black"
         android:onClick="onCheckboxClicked"
         android:text="@string/pressure"
         app:layout_constraintLeft_toLeftOf="@id/editSelectCity"
@@ -52,11 +52,22 @@
         android:id="@+id/cbHumidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:buttonTint="@color/white"
+        android:buttonTint="@color/black"
         android:onClick="onCheckboxClicked"
         android:text="@string/humidity"
         app:layout_constraintLeft_toLeftOf="@id/editSelectCity"
         app:layout_constraintTop_toBottomOf="@id/cbPressure" />
+
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/editSelectCity"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/textSendbtn"
+        android:onClick="onSendButtonClicked"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
