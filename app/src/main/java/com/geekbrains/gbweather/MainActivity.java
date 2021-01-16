@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +15,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Bundle arguments = getIntent().getExtras();
+        if(arguments != null) {
+            String city = arguments.get(SelectCity.keyToMainActivity).toString();
+            TextView textView = findViewById(R.id.selectedCity);
+            textView.setText(city);
+        }
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onCreate: ");
     }

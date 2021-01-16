@@ -1,11 +1,14 @@
 package com.geekbrains.gbweather;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SelectCity extends AppCompatActivity {
     String[] cities = {"Moscow", "London", "New-York", "Madrid", "Paris", "Tokyo", "Los-Angeles", "Dubai", "Beijing", "Hon-Kong"};
+    static String selectCityKey = "sckey";
+    static String keyToMainActivity = "key";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,26 +30,6 @@ public class SelectCity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, cities);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        CheckBox windSpeed = (CheckBox) findViewById(R.id.cbWindSpeed);
-        CheckBox pressure = (CheckBox) findViewById(R.id.cbPressure);
-        CheckBox humidity = (CheckBox) findViewById(R.id.cbHumidity);
-        windSpeed.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-            }
-        });
-        pressure.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-            }
-        });
-        humidity.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            }
-        });
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -65,5 +50,28 @@ public class SelectCity extends AppCompatActivity {
                     Toast.makeText(this, "Humidity checked", Toast.LENGTH_LONG).show();
                 break;
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        EditText selectCity = findViewById(R.id.editSelectCity);
+        outState.putString(selectCityKey, selectCity.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String textView = savedInstanceState.getString(selectCityKey);
+        EditText restView = findViewById(R.id.editSelectCity);
+        restView.setText(textView);
+    }
+
+    public void onSendButtonClicked(View view) {
+        EditText selectedCity = findViewById(R.id.editSelectCity);
+        String text = selectedCity.getText().toString();
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra(keyToMainActivity, text);
+        startActivity(intent);
     }
 }

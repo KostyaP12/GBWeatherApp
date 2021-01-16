@@ -10,4 +10,5 @@
     <string name="tempInfo">5 М/с ЮЗ\n
                             780 мм рт. ст.\n
                             91%</string>
+    <string name="textSendbtn">Прогноз</string>
 </resources>
