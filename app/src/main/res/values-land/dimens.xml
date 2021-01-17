@@ -4,5 +4,5 @@
     <dimen name="marginTopEditSelectCitySpinnerSelectCity">20dp</dimen>
     <dimen name="temperatureTextSize">40sp</dimen>
     <dimen name="tempInfoSize">20sp</dimen>
-    <dimen name="selectedCity">25dp</dimen>
+    <dimen name="selectedCity">25sp</dimen>
 </resources>

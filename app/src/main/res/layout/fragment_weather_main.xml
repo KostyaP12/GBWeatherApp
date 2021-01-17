@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/darker_gray"
+    >
+
+    <TextView
+        android:id="@+id/city_field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/city_filed_margin_top"
+        android:textSize="@dimen/selectedCity"
+        android:textColor="@color/black"/>
+
+
+    <Button
+        android:id="@+id/btnSelectCity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/city_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/secondary_text_dark"
+        android:text="@string/selectCity"
+        android:textSize="@dimen/selectCitySize" />
+
+
+    <TextView
+        android:id="@+id/temperature_field"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/temperature"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/temperatureTextSize" />
+
+    <ImageView
+        android:id="@+id/weather_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="250dp"
+        android:layout_height="153dp"
+        android:contentDescription="@string/ImageViewWeatherIconContentDescription"
+        android:src="@drawable/clouds_weather_png" />
+
+    <TextView
+        android:id="@+id/wind_speed_field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weather_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
+        android:text="@string/wind_speed_str"
+        android:textColor="@color/white"
+        android:textSize="@dimen/tempInfoSize" />
+
+    <TextView
+        android:id="@+id/pressure_field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wind_speed_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pressure_str"
+        android:textColor="@color/white"
+        android:textSize="@dimen/tempInfoSize" />
+
+    <TextView
+        android:id="@+id/humidity_filed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pressure_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/humidity_str"
+        android:textColor="@color/white"
+        android:textSize="@dimen/tempInfoSize" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

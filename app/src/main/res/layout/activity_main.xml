@@ -4,52 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/btnSelectCity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="selectCity"
-        android:text="@string/selectCity"
-        android:textSize="@dimen/selectCitySize"
-        app:layout_constraintEnd_toEndOf="parent"
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/selectedCity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
-        android:text="@string/selectedCity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSelectCity"
-        android:textSize="@dimen/selectedCity"/>
-
-    <TextView
-        android:id="@+id/temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
-        android:text="@string/temperature"
-        android:textSize="@dimen/temperatureTextSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/selectedCity" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
-        android:text="@string/tempInfo"
-        android:textSize="@dimen/tempInfoSize"
-        app:layout_constraintEnd_toEndOf="@id/selectedCity"
-        app:layout_constraintStart_toStartOf="@id/selectedCity"
-        app:layout_constraintTop_toBottomOf="@id/temperature" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

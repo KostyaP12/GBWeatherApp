@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
-    tools:context=".SelectCity">
+    android:background="@android:color/darker_gray">
 
 
     <EditText
@@ -15,16 +14,11 @@
         android:hint="@string/editTextSelectCity"
         app:layout_constraintEnd_toStartOf="@id/sendBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="Moscow"
+        android:inputType="text" />
 
-    <Spinner
-        android:id="@+id/spinnerSelectCity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
-        app:layout_constraintLeft_toLeftOf="@id/editSelectCity"
-        app:layout_constraintRight_toRightOf="@id/editSelectCity"
-        app:layout_constraintTop_toBottomOf="@id/editSelectCity"/>
+
 
     <CheckBox
         android:id="@+id/cbWindSpeed"
@@ -32,17 +26,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
         android:buttonTint="@color/black"
-        android:onClick="onCheckboxClicked"
         android:text="@string/windSpeed"
         app:layout_constraintLeft_toLeftOf="@id/editSelectCity"
-        app:layout_constraintTop_toBottomOf="@id/spinnerSelectCity" />
+        app:layout_constraintTop_toBottomOf="@id/editSelectCity" />
 
     <CheckBox
         android:id="@+id/cbPressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:buttonTint="@color/black"
-        android:onClick="onCheckboxClicked"
         android:text="@string/pressure"
         app:layout_constraintLeft_toLeftOf="@id/editSelectCity"
         app:layout_constraintTop_toBottomOf="@id/cbWindSpeed" />
@@ -53,7 +45,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:buttonTint="@color/black"
-        android:onClick="onCheckboxClicked"
         android:text="@string/humidity"
         app:layout_constraintLeft_toLeftOf="@id/editSelectCity"
         app:layout_constraintTop_toBottomOf="@id/cbPressure" />
@@ -66,7 +57,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/textSendbtn"
-        android:onClick="onSendButtonClicked"
+        android:backgroundTint="@android:color/secondary_text_dark"
         />
 
 

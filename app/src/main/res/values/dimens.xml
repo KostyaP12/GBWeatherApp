@@ -2,7 +2,8 @@
 <resources>
     <dimen name="selectCitySize">18sp</dimen>
     <dimen name="marginTopEditSelectCitySpinnerSelectCity">40dp</dimen>
-    <dimen name="temperatureTextSize">40sp</dimen>
-    <dimen name="tempInfoSize">20sp</dimen>
-    <dimen name="selectedCity">25dp</dimen>
+    <dimen name="temperatureTextSize">80sp</dimen>
+    <dimen name="tempInfoSize">25sp</dimen>
+    <dimen name="selectedCity">25sp</dimen>
+    <dimen name="city_filed_margin_top">30dp</dimen>
 </resources>
