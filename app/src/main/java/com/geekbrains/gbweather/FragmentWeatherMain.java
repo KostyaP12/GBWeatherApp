@@ -29,6 +29,7 @@ public class FragmentWeatherMain extends Fragment{
         View view = inflater.inflate(R.layout.fragment_weather_main, container, false);
         TextView textView = view.findViewById(R.id.city_field);
 
+
         String textFromActivity = getArguments().getString(KEY);
         textView.setText(textFromActivity);
         return view;
