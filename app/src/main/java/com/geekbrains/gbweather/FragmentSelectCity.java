@@ -41,8 +41,6 @@ public class FragmentSelectCity extends Fragment {
         editText = view.findViewById(R.id.editSelectCity);
         button = view.findViewById(R.id.sendBtn);
         checkBoxSpeedWing = view.findViewById(R.id.cbWindSpeed);
-        checkBoxHumidity = view.findViewById(R.id.cbHumidity);
-        checkBoxPressure = view.findViewById(R.id.cbPressure);
 
         button.setOnClickListener(v -> {
             String s = editText.getText().toString();
