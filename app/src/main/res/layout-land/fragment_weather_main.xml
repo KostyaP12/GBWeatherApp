@@ -32,7 +32,7 @@
 
     <TextView
         android:id="@+id/temperature_field"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSelectCity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
@@ -43,10 +43,8 @@
 
     <ImageView
         android:id="@+id/weather_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSelectCity"
         android:layout_width="250dp"
         android:layout_height="153dp"
         android:contentDescription="@string/ImageViewWeatherIconContentDescription"
@@ -54,9 +52,9 @@
 
     <TextView
         android:id="@+id/wing_speed_field"
+        app:layout_constraintStart_toEndOf="@id/temperature_field"
+        app:layout_constraintTop_toBottomOf="@id/btnSelectCity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/weather_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
@@ -66,8 +64,7 @@
 
     <TextView
         android:id="@+id/pressure_field"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/wing_speed_field"
         app:layout_constraintTop_toBottomOf="@id/wing_speed_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,8 +74,7 @@
 
     <TextView
         android:id="@+id/humidity_filed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/wing_speed_field"
         app:layout_constraintTop_toBottomOf="@id/pressure_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
