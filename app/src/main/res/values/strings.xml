@@ -10,8 +10,9 @@
     <string name="wind_speed_str">5 М/с ЮЗ</string>
     <string name="pressure_str">780 мм рт. ст.</string>
     <string name="humidity_str">91%</string>
-    <string name="textSendbtn">Прогноз</string>
+    <string name="textSendSelectedCityButton">Готово</string>
     <string name="ImageViewWeatherIconContentDescription">weather_icon</string>
     <string name="weathericon">weatherIcon</string>
+    <string name="selectedCityFieldText">Введите название города</string>
 </resources>
 
