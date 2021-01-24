@@ -24,7 +24,11 @@ public class FragmentSelectCity extends Fragment {
     String[] cities = {"Moscow", "London", "New-York", "Madrid", "Paris", "Tokyo", "Los-Angeles", "Dubai", "Beijing", "Hon-Kong"};
     public final static String TAG = "com.geekbrains.gbweather.FragmentSelectCity";
     private OnFragmentSelectCityDataListener mListener;
-
+    EditText editText;
+    Button button;
+    CheckBox checkBoxSpeedWing;
+    CheckBox checkBoxHumidity;
+    CheckBox checkBoxPressure;
     public FragmentSelectCity(){
     }
 
@@ -34,14 +38,16 @@ public class FragmentSelectCity extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_select_city, container, false);
-        EditText editText = view.findViewById(R.id.editSelectCity);
-        Button button = view.findViewById(R.id.sendBtn);
+        editText = view.findViewById(R.id.editSelectCity);
+        button = view.findViewById(R.id.sendBtn);
+        checkBoxSpeedWing = view.findViewById(R.id.cbWindSpeed);
 
         button.setOnClickListener(v -> {
             String s = editText.getText().toString();
             mListener.onOpenFragmentWeatherMain(s);
 
         });
+        setRetainInstance(true);
         return view;
     }
 

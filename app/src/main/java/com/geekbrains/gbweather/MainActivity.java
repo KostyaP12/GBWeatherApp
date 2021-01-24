@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentSelectC
         if (fragment == null) {
             fragment = new FragmentSelectCity();
             fm.beginTransaction()
-                    .add(R.id.fragmentContainer, fragment, FragmentSelectCity.TAG)
+                    .add(R.id.fragmentContainer, fragment, FragmentWeatherMain.TAG)
                     .commit();
         }
 
@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements OnFragmentSelectC
 
     @Override
     public void onOpenFragmentWeatherMain(String string) {
+        if(string == null)throw new RuntimeException("Не выбран город");
+
         FragmentManager fm = getSupportFragmentManager();
 
         Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);

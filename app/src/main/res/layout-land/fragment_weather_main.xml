@@ -32,7 +32,7 @@
 
     <TextView
         android:id="@+id/temperature_field"
-        app:layout_constraintBottom_toTopOf="@id/recycler_view_weather"
+        app:layout_constraintTop_toBottomOf="@id/btnSelectCity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
@@ -43,7 +43,6 @@
 
     <ImageView
         android:id="@+id/weather_icon"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnSelectCity"
         android:layout_width="250dp"
@@ -53,20 +52,19 @@
 
     <TextView
         android:id="@+id/wing_speed_field"
+        app:layout_constraintStart_toEndOf="@id/temperature_field"
+        app:layout_constraintTop_toBottomOf="@id/btnSelectCity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/weather_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
         android:text="@string/wind_speed_str"
         android:textColor="@color/white"
         android:textSize="@dimen/tempInfoSize" />
 
     <TextView
         android:id="@+id/pressure_field"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/wing_speed_field"
         app:layout_constraintTop_toBottomOf="@id/wing_speed_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -76,23 +74,13 @@
 
     <TextView
         android:id="@+id/humidity_filed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/wing_speed_field"
         app:layout_constraintTop_toBottomOf="@id/pressure_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/humidity_str"
         android:textColor="@color/white"
         android:textSize="@dimen/tempInfoSize" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:id="@+id/recycler_view_weather"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
