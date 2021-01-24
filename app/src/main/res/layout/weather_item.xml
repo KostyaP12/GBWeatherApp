@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:id="@+id/listItemLayout">
+
+    <ImageView
+        android:id="@+id/item_image_icon"
+        android:src="@drawable/cloudi"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:contentDescription="@string/weathericon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/item_temperature"/>
+
+    <TextView
+        android:id="@+id/item_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/item_day_of_week"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toEndOf="@id/item_temperature"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@android:color/black"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

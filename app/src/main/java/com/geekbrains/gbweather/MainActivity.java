@@ -1,14 +1,20 @@
 package com.geekbrains.gbweather;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements OnFragmentSelectCityDataListener {
 
@@ -18,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentSelectC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
@@ -29,6 +36,10 @@ public class MainActivity extends AppCompatActivity implements OnFragmentSelectC
         }
 
     }
+
+
+
+
     @Override
     public void onOpenFragmentWeatherMain(String string) {
         if(string == null)throw new RuntimeException("Не выбран город");

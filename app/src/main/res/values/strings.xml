@@ -12,5 +12,6 @@
     <string name="humidity_str">91%</string>
     <string name="textSendbtn">Прогноз</string>
     <string name="ImageViewWeatherIconContentDescription">weather_icon</string>
+    <string name="weathericon">weatherIcon</string>
 </resources>
 
