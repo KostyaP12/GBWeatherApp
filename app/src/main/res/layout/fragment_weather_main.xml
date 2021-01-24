@@ -18,16 +18,7 @@
         android:textColor="@color/black"/>
 
 
-    <Button
-        android:id="@+id/btnSelectCity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/city_field"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/secondary_text_dark"
-        android:text="@string/selectCity"
-        android:textSize="@dimen/selectCitySize" />
+
 
 
     <TextView
@@ -43,13 +34,13 @@
 
     <ImageView
         android:id="@+id/weather_icon"
+        android:layout_width="196dp"
+        android:layout_height="93dp"
+        android:contentDescription="@string/ImageViewWeatherIconContentDescription"
+        android:src="@drawable/clouds_weather_png_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSelectCity"
-        android:layout_width="250dp"
-        android:layout_height="153dp"
-        android:contentDescription="@string/ImageViewWeatherIconContentDescription"
-        android:src="@drawable/clouds_weather_png" />
+        app:layout_constraintTop_toBottomOf="@id/city_field" />
 
     <TextView
         android:id="@+id/wing_speed_field"

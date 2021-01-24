@@ -1,86 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/darker_gray"
-    >
+    android:background="@android:color/darker_gray">
 
     <TextView
         android:id="@+id/city_field"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/city_filed_margin_top"
+        android:textColor="@color/black"
         android:textSize="@dimen/selectedCity"
-        android:textColor="@color/black"/>
-
-
-    <Button
-        android:id="@+id/btnSelectCity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/city_field"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/secondary_text_dark"
-        android:text="@string/selectCity"
-        android:textSize="@dimen/selectCitySize" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:id="@+id/temperature_field"
-        app:layout_constraintTop_toBottomOf="@id/btnSelectCity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/temperature"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/temperatureTextSize" />
+        android:textSize="@dimen/temperatureTextSize"
+        app:layout_constraintBottom_toTopOf="@id/recycler_view_weather"
+        app:layout_constraintEnd_toEndOf="@id/weather_icon"
+        app:layout_constraintStart_toStartOf="@id/weather_icon" />
 
     <ImageView
         android:id="@+id/weather_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSelectCity"
-        android:layout_width="250dp"
-        android:layout_height="153dp"
+        android:layout_width="196dp"
+        android:layout_height="93dp"
         android:contentDescription="@string/ImageViewWeatherIconContentDescription"
-        android:src="@drawable/clouds_weather_png" />
+        android:src="@drawable/clouds_weather_png_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/city_field" />
 
     <TextView
-        android:id="@+id/wing_speed_field"
-        app:layout_constraintStart_toEndOf="@id/temperature_field"
-        app:layout_constraintTop_toBottomOf="@id/btnSelectCity"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/wind_speed_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
         android:text="@string/wind_speed_str"
         android:textColor="@color/white"
-        android:textSize="@dimen/tempInfoSize" />
+        android:textSize="@dimen/tempInfoSize"
+
+        app:layout_constraintBottom_toTopOf="@id/pressure_field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/weather_icon" />
 
     <TextView
         android:id="@+id/pressure_field"
-        app:layout_constraintStart_toStartOf="@id/wing_speed_field"
-        app:layout_constraintTop_toBottomOf="@id/wing_speed_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pressure_str"
         android:textColor="@color/white"
-        android:textSize="@dimen/tempInfoSize" />
+        android:textSize="@dimen/tempInfoSize"
+        app:layout_constraintBottom_toTopOf="@id/humidity_filed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/weather_icon" />
 
     <TextView
         android:id="@+id/humidity_filed"
-        app:layout_constraintStart_toStartOf="@id/wing_speed_field"
-        app:layout_constraintTop_toBottomOf="@id/pressure_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/humidity_str"
         android:textColor="@color/white"
-        android:textSize="@dimen/tempInfoSize" />
+        android:textSize="@dimen/tempInfoSize"
+        app:layout_constraintBottom_toTopOf="@id/recycler_view_weather"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/weather_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_weather"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

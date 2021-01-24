@@ -7,17 +7,34 @@
     android:background="@android:color/darker_gray">
 
 
-    <EditText
-        android:id="@+id/editSelectCity"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/selectedCityTextInputLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/editTextSelectCity"
-        app:layout_constraintEnd_toStartOf="@id/sendBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="Moscow"
-        android:inputType="text" />
+        android:layout_marginTop="8dp"
+        style="@style/view_margins">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/selectedCityTextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/selectedCityFieldText"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sendSelectedCityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
+        android:backgroundTint="@android:color/secondary_text_dark"
+        android:minWidth="64dp"
+        android:text="@string/textSendSelectedCityButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cbHumidity" />
 
 
     <CheckBox
@@ -27,8 +44,9 @@
         android:layout_marginTop="@dimen/marginTopEditSelectCitySpinnerSelectCity"
         android:buttonTint="@color/black"
         android:text="@string/windSpeed"
-        app:layout_constraintLeft_toLeftOf="@id/editSelectCity"
-        app:layout_constraintTop_toBottomOf="@id/editSelectCity" />
+        style="@style/view_margins"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectedCityTextInputLayout" />
 
     <CheckBox
         android:id="@+id/cbPressure"
@@ -36,7 +54,8 @@
         android:layout_height="wrap_content"
         android:buttonTint="@color/black"
         android:text="@string/pressure"
-        app:layout_constraintLeft_toLeftOf="@id/editSelectCity"
+        style="@style/view_margins"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cbWindSpeed" />
 
 
@@ -46,19 +65,9 @@
         android:layout_height="wrap_content"
         android:buttonTint="@color/black"
         android:text="@string/humidity"
-        app:layout_constraintLeft_toLeftOf="@id/editSelectCity"
+        style="@style/view_margins"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cbPressure" />
-
-    <Button
-        android:id="@+id/sendBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/editSelectCity"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/textSendbtn"
-        android:backgroundTint="@android:color/secondary_text_dark"
-        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
